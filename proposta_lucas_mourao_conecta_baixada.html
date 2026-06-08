@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Proposta Estratégica | Lucas Mourão PSD</title>
+  <style>
+    :root{
+      --navy:#08162b;--blue:#133f7a;--cyan:#23c4d7;--green:#28c76f;--pink:#ff4fa3;--gold:#f6c85f;--white:#ffffff;--soft:#f4f7fb;--text:#1f2937;--muted:#64748b;--card:#ffffff;--darkcard:#10213d;
+    }
+    *{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;font-family:Inter,Segoe UI,Arial,sans-serif;background:var(--soft);color:var(--text);line-height:1.6} a{text-decoration:none;color:inherit}
+    .topbar{position:fixed;top:0;left:0;right:0;z-index:20;background:rgba(8,22,43,.88);backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,.08)}
+    .nav{max-width:1180px;margin:auto;display:flex;align-items:center;justify-content:space-between;padding:14px 22px;color:#fff}.brand{font-weight:800;letter-spacing:.3px}.brand span{color:var(--cyan)}.navlinks{display:flex;gap:18px;font-size:13px;color:#dbeafe}.navlinks a:hover{color:#fff}.cta-top{background:linear-gradient(135deg,var(--cyan),var(--green));padding:9px 14px;border-radius:999px;color:#061525;font-weight:800}
+    .hero{min-height:100vh;background:radial-gradient(circle at 15% 20%,rgba(35,196,215,.25),transparent 28%),radial-gradient(circle at 80% 15%,rgba(255,79,163,.18),transparent 25%),linear-gradient(135deg,#06101f 0%,#0b2448 58%,#123a70 100%);color:#fff;display:flex;align-items:center;padding:110px 22px 70px;position:relative;overflow:hidden}.hero:after{content:"";position:absolute;right:-120px;bottom:-120px;width:420px;height:420px;border-radius:50%;background:rgba(246,200,95,.12)}
+    .wrap{max-width:1180px;margin:auto;width:100%;position:relative;z-index:2}.hero-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:46px;align-items:center}.badge{display:inline-flex;gap:8px;align-items:center;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);padding:8px 14px;border-radius:999px;color:#dbeafe;font-size:13px;margin-bottom:22px}.hero h1{font-size:clamp(38px,6vw,78px);line-height:.98;margin:0 0 22px;font-weight:900;letter-spacing:-2px}.hero h1 span{background:linear-gradient(135deg,var(--cyan),var(--green),var(--gold));-webkit-background-clip:text;color:transparent}.hero p{font-size:clamp(18px,2.2vw,24px);color:#dbeafe;max-width:780px;margin:0 0 28px}.hero-actions{display:flex;gap:14px;flex-wrap:wrap}.btn{display:inline-flex;align-items:center;justify-content:center;padding:14px 20px;border-radius:14px;font-weight:850}.btn-primary{background:linear-gradient(135deg,var(--cyan),var(--green));color:#061525}.btn-secondary{border:1px solid rgba(255,255,255,.25);color:#fff;background:rgba(255,255,255,.08)}
+    .hero-card{background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.15);border-radius:28px;padding:26px;box-shadow:0 30px 80px rgba(0,0,0,.25)}.hero-card h3{margin:0 0 14px;font-size:22px}.metric{display:flex;justify-content:space-between;gap:18px;padding:14px 0;border-bottom:1px solid rgba(255,255,255,.12)}.metric:last-child{border-bottom:0}.metric b{font-size:24px;color:#fff}.metric span{color:#bfdbfe;font-size:13px}
+    section{padding:86px 22px}.section-dark{background:var(--navy);color:#fff}.section-blue{background:linear-gradient(135deg,#0b2448,#102e5d);color:#fff}.eyebrow{color:var(--cyan);text-transform:uppercase;letter-spacing:1.7px;font-weight:900;font-size:12px;margin-bottom:10px}.title{font-size:clamp(30px,4vw,52px);line-height:1.08;margin:0 0 18px;letter-spacing:-1px}.lead{font-size:19px;color:var(--muted);max-width:900px}.section-dark .lead,.section-blue .lead{color:#cbd5e1}.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:34px}.grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;margin-top:34px}.card{background:var(--card);border-radius:24px;padding:26px;box-shadow:0 18px 45px rgba(15,23,42,.08);border:1px solid rgba(15,23,42,.06)}.section-dark .card,.section-blue .card{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.12);color:#fff}.card h3{margin:0 0 10px;font-size:23px}.card p{margin:0;color:#64748b}.section-dark .card p,.section-blue .card p{color:#cbd5e1}.icon{font-size:36px;margin-bottom:14px}.number{font-size:42px;font-weight:950;color:var(--blue);letter-spacing:-1px}.section-dark .number,.section-blue .number{color:var(--gold)}.small{font-size:13px;color:#64748b}.section-dark .small,.section-blue .small{color:#cbd5e1}
+    .problem{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:34px}.list{padding:0;margin:16px 0 0;list-style:none}.list li{padding:10px 0 10px 28px;position:relative;border-bottom:1px solid rgba(148,163,184,.18)}.list li:before{content:"✓";position:absolute;left:0;color:var(--green);font-weight:900}.danger li:before{content:"✕";color:#ff6b6b}
+    .funnel{display:grid;grid-template-columns:repeat(9,1fr);gap:8px;margin-top:34px}.step{background:#fff;border-radius:16px;padding:16px 10px;text-align:center;font-size:12px;font-weight:800;box-shadow:0 10px 28px rgba(15,23,42,.08);min-height:90px;display:flex;align-items:center;justify-content:center}.step:nth-child(odd){background:#e9fbff}.step:nth-child(even){background:#effaf3}.section-dark .step{background:rgba(255,255,255,.09);color:#fff;border:1px solid rgba(255,255,255,.12)}
+    .timeline{margin-top:38px;display:grid;gap:18px}.phase{display:grid;grid-template-columns:130px 1fr;gap:20px;align-items:start;background:#fff;border-radius:24px;padding:22px;border:1px solid rgba(15,23,42,.06);box-shadow:0 12px 36px rgba(15,23,42,.06)}.phase-time{font-weight:950;color:var(--blue);font-size:18px}.phase h3{margin:0 0 8px}.phase p{margin:0;color:#64748b}
+    .quote{font-size:clamp(28px,4vw,48px);line-height:1.15;font-weight:950;letter-spacing:-1px;text-align:center;max-width:1000px;margin:0 auto}.quote span{color:var(--gold)}
+    .table{width:100%;border-collapse:collapse;margin-top:28px;background:#fff;border-radius:22px;overflow:hidden;box-shadow:0 18px 45px rgba(15,23,42,.08)}.table th,.table td{padding:18px;border-bottom:1px solid #e5e7eb;text-align:left}.table th{background:#0b2448;color:#fff}.table tr:last-child td{border-bottom:0}.highlight{background:linear-gradient(135deg,#fff7df,#e9fbff);border-left:5px solid var(--gold)}
+    .conversion-box{background:linear-gradient(135deg,#07172d,#133f7a);color:#fff;border-radius:34px;padding:42px;margin-top:36px;position:relative;overflow:hidden}.conversion-box:after{content:"";position:absolute;right:-80px;top:-80px;width:260px;height:260px;background:rgba(35,196,215,.2);border-radius:50%}.conversion-box h3{font-size:34px;line-height:1.1;margin:0 0 16px}.conversion-box p{color:#dbeafe;font-size:18px;max-width:850px}.pillrow{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}.pill{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.16);border-radius:999px;padding:9px 13px;font-size:13px;font-weight:800}
+    .footer{background:#050b16;color:#cbd5e1;padding:50px 22px;text-align:center}.footer b{color:#fff}.footer .brandline{font-size:26px;font-weight:900;color:#fff;margin-bottom:8px}
+    @media(max-width:900px){.hero-grid,.grid-3,.grid-2,.problem{grid-template-columns:1fr}.navlinks{display:none}.funnel{grid-template-columns:1fr 1fr}.phase{grid-template-columns:1fr}.hero{padding-top:95px}.table{font-size:14px}.table th,.table td{padding:12px}.grid-3 .card{min-height:auto}}
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="nav">
+      <div class="brand">Conecta <span>Baixada</span></div>
+      <nav class="navlinks">
+        <a href="#oportunidade">Oportunidade</a><a href="#plataforma">Plataforma</a><a href="#conversao">Conversão</a><a href="#90dias">90 dias</a><a href="#decisao">Decisão</a>
+      </nav>
+      <a class="cta-top" href="#decisao">Ver proposta</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div>
+          <div class="badge">Projeto estratégico de pré-campanha • Lucas Mourão PSD</div>
+          <h1>Antes de pedir votos, <span>vamos construir uma comunidade.</span></h1>
+          <p>Uma estratégia de 90 dias para posicionar Lucas Mourão como articulador da maior rede de proteção animal, acolhimento social, diversidade e participação comunitária da Baixada Santista.</p>
+          <div class="hero-actions">
+            <a href="#oportunidade" class="btn btn-primary">Entender a oportunidade</a>
+            <a href="#decisao" class="btn btn-secondary">Ver por que agir agora</a>
+          </div>
+        </div>
+        <div class="hero-card">
+          <h3>O que pode ser construído em 90 dias</h3>
+          <div class="metric"><span>Usuários cadastrados</span><b>5k–15k</b></div>
+          <div class="metric"><span>ONGs parceiras</span><b>30–50</b></div>
+          <div class="metric"><span>Lideranças comunitárias</span><b>80–120</b></div>
+          <div class="metric"><span>Ex-vereadores articuladores</span><b>8</b></div>
+          <div class="metric"><span>Alcance digital estimado</span><b>500k–1M</b></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="oportunidade">
+      <div class="wrap">
+        <div class="eyebrow">A tese central</div>
+        <h2 class="title">Campanhas disputam atenção. Movimentos constroem pertencimento.</h2>
+        <p class="lead">A maioria dos candidatos entra na eleição tentando convencer pessoas que ainda não têm relação com eles. Esta proposta inverte a lógica: criar relacionamento antes da campanha oficial, transformar causas em comunidade e comunidade em capital político legítimo.</p>
+        <div class="problem">
+          <div class="card">
+            <h3>O caminho tradicional</h3>
+            <ul class="list danger">
+              <li>Vídeos, impulsionamento e promessas</li>
+              <li>Reuniões sem continuidade</li>
+              <li>Seguidores que assistem, mas não participam</li>
+              <li>Atenção comprada e rapidamente esquecida</li>
+            </ul>
+          </div>
+          <div class="card highlight">
+            <h3>O caminho proposto</h3>
+            <ul class="list">
+              <li>Pessoas participando de causas reais</li>
+              <li>ONGs, lideranças e comunidades conectadas</li>
+              <li>Histórias verdadeiras virando conteúdo</li>
+              <li>Confiança construída antes do pedido de voto</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-dark">
+      <div class="wrap">
+        <div class="quote">“A pergunta não é como Lucas vai aparecer. A pergunta é: <span>como Lucas será lembrado?</span>”</div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <div class="eyebrow">Potencial regional</div>
+        <h2 class="title">A Baixada Santista possui massa social suficiente para transformar causas em movimento.</h2>
+        <p class="lead">A região reúne cerca de 1,8 milhão de habitantes e aproximadamente 1,3 milhão de eleitores. Dentro desse universo, existem grupos altamente mobilizáveis: protetores de animais, famílias com pets, mulheres, comunidade LGBTQIA+, ONGs, lideranças comunitárias e redes de bairro.</p>
+        <div class="grid-3">
+          <div class="card"><div class="icon">🐾</div><div class="number">700k–900k</div><h3>Pessoas ligadas à causa animal</h3><p>Famílias com cães e gatos, protetores, pet shops, clínicas, adotantes, voluntários e apoiadores.</p></div>
+          <div class="card"><div class="icon">🌷</div><div class="number">+50%</div><h3>Eleitorado feminino</h3><p>Mulheres representam maioria do eleitorado e exercem forte influência familiar e comunitária.</p></div>
+          <div class="card"><div class="icon">🏳️‍🌈</div><div class="number">Alta</div><h3>Capacidade digital</h3><p>A comunidade LGBTQIA+ e seus apoiadores possuem forte presença em redes, debate público e mobilização.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="plataforma" class="section-blue">
+      <div class="wrap">
+        <div class="eyebrow">A ferramenta estratégica</div>
+        <h2 class="title">Conecta Baixada: não é um aplicativo. É um CRM político-social regional.</h2>
+        <p class="lead">O aplicativo e o site serão a interface. O verdadeiro valor estará nos dados, relacionamentos, histórias e comunidades criadas em torno do projeto.</p>
+        <div class="grid-3">
+          <div class="card"><div class="icon">🐶</div><h3>Encontre Meu Dono</h3><p>Cadastro de animais perdidos e encontrados, com divulgação regional e apoio de ONGs e protetores.</p></div>
+          <div class="card"><div class="icon">❤️</div><h3>Encontre um Novo Amigo</h3><p>Vitrine de adoção para ONGs parceiras mostrarem cães e gatos que precisam de uma família.</p></div>
+          <div class="card"><div class="icon">🚨</div><h3>Maus-tratos</h3><p>Registro e encaminhamento responsável de denúncias aos órgãos competentes, sem exposição indevida.</p></div>
+          <div class="card"><div class="icon">🌷</div><h3>Mulher Segura</h3><p>Canal de orientação e encaminhamento para mulheres vítimas de violência, assédio ou ameaça.</p></div>
+          <div class="card"><div class="icon">🏳️‍🌈</div><h3>Baixada Sem Medo</h3><p>Acolhimento e direcionamento para denúncias de homofobia, transfobia, discriminação e agressões.</p></div>
+          <div class="card"><div class="icon">📲</div><h3>Canal Direto com Lucas</h3><p>Um espaço de comunicação contínua para ouvir demandas e responder publicamente às principais pautas.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <div class="eyebrow">Por que causa animal?</div>
+        <h2 class="title">A causa animal é a maior porta de entrada emocional da estratégia.</h2>
+        <p class="lead">Ela possui baixa rejeição política, alto potencial de compartilhamento e atravessa idade, classe social, religião e posicionamento ideológico. Quando um animal é encontrado, adotado ou protegido, uma família inteira sente o resultado.</p>
+        <div class="grid-2">
+          <div class="card">
+            <h3>O que será ativado</h3>
+            <ul class="list">
+              <li>30 a 50 ONGs parceiras cadastradas</li>
+              <li>300 a 500 animais divulgados para adoção</li>
+              <li>150 a 300 animais perdidos ou encontrados cadastrados</li>
+              <li>300 a 500 pedidos de castração registrados</li>
+              <li>100 a 200 denúncias orientadas aos canais competentes</li>
+            </ul>
+          </div>
+          <div class="card highlight">
+            <h3>O resultado político</h3>
+            <p>Cada ONG é uma comunidade. Cada protetor é um multiplicador. Cada adoção é uma história. Cada reencontro é uma memória positiva associada ao projeto. E memória positiva é uma das formas mais fortes de criar vínculo político.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-dark">
+      <div class="wrap">
+        <div class="eyebrow">Mulheres e diversidade</div>
+        <h2 class="title">Quando uma pessoa se sente ouvida, ela passa a ouvir você.</h2>
+        <p class="lead">A proposta não é explorar dor. É criar pontes de orientação, acolhimento e encaminhamento responsável. A proteção às mulheres e à comunidade LGBTQIA+ gera legitimidade porque responde a problemas reais e frequentemente subnotificados.</p>
+        <div class="grid-3">
+          <div class="card"><div class="number">2k–5k</div><h3>Mulheres impactadas diretamente</h3><p>Conteúdo educativo, canais de orientação, encaminhamentos e rede de apoio.</p></div>
+          <div class="card"><div class="number">1k–3k</div><h3>Pessoas LGBTQIA+ impactadas</h3><p>Canal seguro, coletivos parceiros e acolhimento sem exposição das vítimas.</p></div>
+          <div class="card"><div class="number">100k+</div><h3>Alcance digital por pauta</h3><p>Conteúdos de orientação e histórias responsáveis podem gerar grande compartilhamento social.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="conversao">
+      <div class="wrap">
+        <div class="eyebrow">Como isso vira apoio</div>
+        <h2 class="title">A conversão não nasce da propaganda. Nasce da experiência.</h2>
+        <p class="lead">O funil abaixo mostra como uma pessoa deixa de ser apenas impactada e passa a participar, confiar, compartilhar e defender o projeto.</p>
+        <div class="funnel">
+          <div class="step">Alcance</div><div class="step">Interesse</div><div class="step">Participação</div><div class="step">Ajuda</div><div class="step">Confiança</div><div class="step">Pertencimento</div><div class="step">Compartilhamento</div><div class="step">Mobilização</div><div class="step">Apoio político</div>
+        </div>
+        <div class="conversion-box">
+          <h3>Exemplo de conversão prática</h3>
+          <p>Uma família cadastra um cachorro perdido. A rede divulga. Uma ONG parceira compartilha. O animal é localizado. A história vira vídeo. A família passa a acompanhar Lucas. Amigos compartilham. Novas pessoas entram na plataforma. Uma ação social vira relacionamento político legítimo.</p>
+          <div class="pillrow"><span class="pill">Experiência real</span><span class="pill">Gratidão</span><span class="pill">História compartilhável</span><span class="pill">Memória positiva</span><span class="pill">Vínculo político</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-blue">
+      <div class="wrap">
+        <div class="eyebrow">Rede territorial</div>
+        <h2 class="title">A tecnologia abre portas. A presença nas ruas cria confiança.</h2>
+        <p class="lead">Oito ex-vereadores não representam apenas oito apoios. Representam oito núcleos políticos regionais com histórico, relacionamento e credibilidade local.</p>
+        <div class="grid-3">
+          <div class="card"><div class="number">8</div><h3>Ex-vereadores</h3><p>Articuladores territoriais, acelerando entrada em bairros, ONGs, associações e comunidades.</p></div>
+          <div class="card"><div class="number">80–120</div><h3>Lideranças comunitárias</h3><p>Se cada uma influenciar 50 famílias, o potencial inicial passa de 15 mil pessoas.</p></div>
+          <div class="card"><div class="number">30–50</div><h3>ONGs parceiras</h3><p>Uma ONG é uma comunidade já formada com voluntários, seguidores, doadores e apoiadores.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="90dias">
+      <div class="wrap">
+        <div class="eyebrow">Execução</div>
+        <h2 class="title">Plano de 90 dias para sair da ideia e chegar à comunidade ativa.</h2>
+        <div class="timeline">
+          <div class="phase"><div class="phase-time">Dias 1–15</div><div><h3>Estruturação e posicionamento</h3><p>Identidade do projeto, portal, aplicativo, formulários, CRM político-social, canais de denúncia/orientação e narrativa pública.</p></div></div>
+          <div class="phase"><div class="phase-time">Dias 15–30</div><div><h3>Formação da rede regional</h3><p>Ativação dos 8 ex-vereadores, primeiras ONGs, lideranças comunitárias, grupos de WhatsApp e parceiros estratégicos.</p></div></div>
+          <div class="phase"><div class="phase-time">Dias 30–60</div><div><h3>Mobilização e geração de histórias</h3><p>Lançamento das campanhas Encontre Meu Dono, Encontre um Novo Amigo, Mulher Segura e Baixada Sem Medo.</p></div></div>
+          <div class="phase"><div class="phase-time">Dias 60–90</div><div><h3>Consolidação e expansão</h3><p>Lives, prestação de contas, encontros comunitários, visitas a ONGs, ampliação territorial e fortalecimento da base.</p></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <div class="eyebrow">Cenários de resultado</div>
+        <h2 class="title">Projeções conservadoras para medir retorno político.</h2>
+        <table class="table">
+          <thead><tr><th>Cenário</th><th>Usuários</th><th>Participantes ativos</th><th>Multiplicadores</th><th>Influência direta estimada</th></tr></thead>
+          <tbody>
+            <tr><td>Conservador</td><td>5.000</td><td>1.500</td><td>300</td><td>6.000 pessoas</td></tr>
+            <tr><td>Moderado</td><td>10.000</td><td>3.000</td><td>600</td><td>12.000 pessoas</td></tr>
+            <tr><td>Alta performance</td><td>15.000</td><td>4.500</td><td>900</td><td>18.000 pessoas</td></tr>
+          </tbody>
+        </table>
+        <p class="small">Projeção baseada em 30% de participação ativa e 20% de multiplicadores influenciando, de forma conservadora, 20 pessoas cada. O objetivo é medir potencial de relacionamento, não promessa de votos.</p>
+      </div>
+    </section>
+
+    <section class="section-dark">
+      <div class="wrap">
+        <div class="eyebrow">Diferencial competitivo</div>
+        <h2 class="title">O que nenhum concorrente copia rapidamente.</h2>
+        <div class="grid-3">
+          <div class="card"><h3>Confiança</h3><p>Não se compra com anúncio. Precisa ser construída com presença, escuta e utilidade real.</p></div>
+          <div class="card"><h3>Comunidade</h3><p>Não nasce em uma semana. Cresce com participação, histórias, encontros e pertencimento.</p></div>
+          <div class="card"><h3>Histórico</h3><p>Quando a campanha começar, Lucas já poderá mostrar o que construiu antes de pedir votos.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="decisao">
+      <div class="wrap">
+        <div class="conversion-box">
+          <div class="eyebrow">A decisão estratégica</div>
+          <h3>Lucas pode iniciar a campanha tentando convencer pessoas. Ou pode iniciar liderando uma comunidade que já acredita no projeto.</h3>
+          <p>Esta proposta não vende apenas marketing digital. Vende uma infraestrutura de relacionamento político: app, site, CRM, conteúdo, rede territorial, ONGs, lideranças, comunidades e histórias reais para posicionar Lucas Mourão como uma referência social da Baixada Santista.</p>
+          <div class="pillrow"><span class="pill">Estratégia</span><span class="pill">CRM político</span><span class="pill">Redes sociais</span><span class="pill">Mobilização de rua</span><span class="pill">Conteúdo de alto impacto</span><span class="pill">Comunidade</span></div>
+        </div>
+        <div class="grid-2">
+          <div class="card">
+            <h3>O que a maioria dos candidatos terá</h3>
+            <ul class="list danger"><li>Seguidores sem base organizada</li><li>Vídeos sem continuidade</li><li>Promessas sem experiência real</li><li>Impulsionamento dependente de verba</li></ul>
+          </div>
+          <div class="card highlight">
+            <h3>O que Lucas pode construir</h3>
+            <ul class="list"><li>Base regional própria</li><li>Relacionamento segmentado</li><li>ONGs e lideranças parceiras</li><li>Comunidade ativa antes da eleição</li></ul>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="brandline">MONGbeach Comunicação Estratégica</div>
+    <p>Projeto desenvolvido por <b>Alessandro Bortoleto Rodrigues</b></p>
+    <p>Marketing Político • CRM • Automação • Redes Sociais • Mobilização Digital e Territorial</p>
+  </footer>
+</body>
+</html>
